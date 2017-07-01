@@ -19,7 +19,6 @@ ingredients = {
 print("Welcome to the Salty Seadog!")
 print("We're runnin' a bit short on spirits since the storm sunk our last shipment, we still got what ya want in stock if yer'n interested...")
 
-counter = 10
 cust_pref = {}
 
 def dr_question():
