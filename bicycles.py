@@ -1,7 +1,7 @@
 #1) I will create the classes for the Bike, Shop, and Customer, and create the instances to reflect bike types, shops with different inventory and stocks, and the small, medium, and high budget customers. 
 #2) A price will be attributed to each instance under the bike class.
 #3) A list will be created for each shop instance to reflect different stock amounts for different bike types
-#3) For each customer's budget, I will provide an equal to/less than the customer's budget to be printed for the bikes available at each store, creating a formula that will account for the 20% increase required upon sale of the bike to the customer 
+#4) For each customer's budget, I will provide an equal to/less than the customer's budget to be printed for the bikes available at each store, creating a formula that will account for the 20% increase required upon sale of the bike to the customer 
 
 #These are the bike classes, they will be separated by weight class 
 class Bike(object):
