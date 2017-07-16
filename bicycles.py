@@ -1,3 +1,134 @@
+##VER3.0##
+
+#These are the bike classes, they will be separated by weight class 
+class Bike(object):
+    def __init__(self, name, weight, unitcost):
+        self.name = name
+        self.weight = weight
+        self.unitcost = unitcost
+
+#Shops, they take inventory and money from Customers
+class Shop(object):
+    def __init__(self, name, stock, salemargin, profit=0):
+        self.name = name
+        self.stock = stock
+        self.salemargin = salemargin
+        self.profit = profit
+
+#Customers, Shops take money from them    
+class Customer(object):
+    def __init__(self, name, budget, purchase):
+        self.name = name
+        self.budget = budget
+        self.purchase = purchase
+
+'''Bike'''
+        
+#This section contains the Bike models with corresponding attributes
+class Light(Bike): #Bike is the parent of Light-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 15, 150)
+
+class Medium(Bike): #Bike is the parent of Medium-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 20, 350)
+        
+class Heavy(Bike): #Bike is the parent of Heavy-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 25, 650)
+
+'''Shop'''
+
+class Small(Shop): #Shop is the parent of a small-sized shop with a limited stock
+    def __init__(self, name="Bill's Bikes", salemargin, profit):
+        
+    def bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        stock = {
+            Light : 5
+            Medium : 5
+            Heavy : 5
+        }
+        for stock in bike_inventory():
+            print("We have the following {}".format(stock))    
+        
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin 
+        margin = self.unitcost + (self.unitcost * .20)   
+        
+    def profit(self): #Combines the amount earned from the sale of each bike
+        profit = 
+        
+class Medium(Shop): #Shop is the parent of a medium-sized shop with a fair selection in their stock 
+    def __init__(self, name="Sam's Sports", salemargin, profit):
+
+    def bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        stock = {
+            Light : 15
+            Medium : 15
+            Heavy : 15
+        }
+        for stock in bike_inventory():
+            print("We have the following {}".format(stock))
+            
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin     
+        margin = self.unitcost + (self.unitcost * .20)   
+        
+    def profit(self): #Combines the amount earned from the sale of each bike
+        profit = 
+        
+class Large(Shop): #Shop is the parent of a large-sized shop with a vast selection in their stock
+    def __init__(self, name="Bike World", stock, salemargin, profit):
+
+    def bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        stock = {
+            Light : 25
+            Medium : 25
+            Heavy : 25
+        }
+        for stock in bike_inventory():
+            print("We have the following {}".format(stock))
+    
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin  
+        margin = self.unitcost + (self.unitcost * .20)   
+            
+        
+    def profit_earned(self): #Combines the amount earned from the sale of each bike
+        lrg_profit = 
+          
+'''Customer'''
+
+class Thrifty(Customer): #Customer is the parent of a thrifty customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 200, purchase)
+
+    def t_afford(self): 
+        for k,v in bike_inventory(): 
+            if k not in (Medium,Heavy):
+                print(bike_inventory)
+            
+class Moderate(Customer) #Customer is the parent of a moderate customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 500, purchase)
+        
+    def m_afford(self):
+        for k,v in bike_inventory(): 
+            if k not in (Heavy):
+                print(bike_inventory)
+
+class Spendthrift(Customer): #Customer is the parent of a spendthrift-type customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 1000, purchase)
+    
+    def s_afford(self): #Parses bike inventory based on budget and bike cost
+        for k,v in bike_inventory(): 
+            if k not in (""): 
+                print(bike_inventory)
+      
+if name == "main":
+    
+############################
+############################
+############################
+##OBSOLETE##
 #1) I will create the classes for the Bike, Shop, and Customer, and create the instances to reflect bike types, shops with different inventory and stocks, and the small, medium, and high budget customers. 
 #2) A price will be attributed to each instance under the bike class.
 #3) A list will be created for each shop instance to reflect different stock amounts for different bike types
