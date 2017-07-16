@@ -160,3 +160,127 @@ class Spendthrift(Customer): #Customer is the parent of a spendthrift-type custo
             
 if name == "main":
     
+####VER 2.5####
+
+#These are the bike classes, they will be separated by weight class 
+class Bike(object):
+    def __init__(self, name, weight, unitcost):
+        self.name = name
+        self.weight = weight
+        self.unitcost = unitcost
+
+#Shops, they take inventory and money from Customers
+class Shop(object):
+    def __init__(self, name, stock, salemargin, profit=0):
+        self.name = name
+        self.stock = stock
+        self.salemargin = salemargin
+        self.profit = profit
+
+#Customers, Shops take money from them    
+class Customer(object):
+    def __init__(self, name, budget, purchase):
+        self.name = name
+        self.budget = budget
+        self.purchase = purchase
+
+'''Bike'''
+        
+#This section contains the Bike models with corresponding attributes
+class Light(Bike): #Bike is the parent of Light-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 15, 150)
+
+class Medium(Bike): #Bike is the parent of Medium-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 20, 350)
+        
+class Heavy(Bike): #Bike is the parent of Heavy-class bikes
+    def __init__(self, name, weight, unitcost):
+        super.__init__(name, 25, 650)
+
+'''Shop'''
+
+class Small(Shop): #Shop is the parent of a small-sized shop with a limited stock
+    def __init__(self, name="Bill's Bikes", salemargin, profit):
+        
+    def sm_bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        sm_stock = {
+            Light : 5
+            Medium : 5
+            Heavy : 5
+        }
+        for stock in sm_bike_inventory():
+            print("We have the following {}".format(sm_stock))    
+        
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin 
+        if self.purchase == True:
+            margin = self.unitcost + (self.unitcost * .20)   
+            print(margin)
+            
+    def profit(self): #Combines the amount earned from the sale of each bike
+        sm_profit = 
+        
+class Medium(Shop): #Shop is the parent of a medium-sized shop with a fair selection in their stock 
+    def __init__(self, name="Sam's Sports", salemargin, profit):
+
+    def med_bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        med_stock = {
+            Light : 15
+            Medium : 15
+            Heavy : 15
+        }
+        for stock in med_bike_inventory():
+            print("We have the following {}".format(med_stock))
+            
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin     
+        if self.purchase == True:
+            margin = self.unitcost + (self.unitcost * .20)
+            print(margin)
+        
+    def profit(self): #Combines the amount earned from the sale of each bike
+        med_profit
+        
+class Large(Shop): #Shop is the parent of a large-sized shop with a vast selection in their stock
+    def __init__(self, name="Bike World", stock, salemargin, profit):
+
+    def lrg_bike_inventory(self): #Accounts for the current store stock of bikes, removes one of each class per purchase
+        lrg_stock = {
+            Light : 25
+            Medium : 25
+            Heavy : 25
+        }
+        for stock in lrg_bike_inventory():
+            print("We have the following {}".format(lrg_stock))
+    
+    def store_salemargin(self): #Accounts for unit cost and 20% profit margin  
+        if self.purchase == True:
+            margin = self.unitcost + (self.unitcost * .20)   
+            print(margin)   
+        
+    def profit_earned(self): #Combines the amount earned from the sale of each bike
+        lrg_profit = 
+          
+'''Customer'''
+
+class Thrifty(Customer): #Customer is the parent of a thrifty customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 200, purchase)
+
+    def t_afford(self): #
+            
+class Moderate(Customer) #Customer is the parent of a moderate customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 500, purchase)
+        
+    def m_afford(self):
+        if self.budget <= unitcost():
+            print(bike_inventory())
+            
+class Spendthrift(Customer): #Customer is the parent of a spendthrift-type customer
+    def __init__(self, name, budget, purchase):
+        super.__init__(name, 1000, purchase)
+    
+    def s_afford(self):
+        if self.budget <= unitcost():
+            
