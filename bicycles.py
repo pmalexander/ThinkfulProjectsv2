@@ -1,5 +1,100 @@
-##VER3.0##
+###VER4.0###
 
+'''Bike'''
+class Bike(object): #This section contains the Bike models with corresponding attributes
+    def __init__(self, name, weight, unitcost):
+        self.name = name
+        self.weight = weight
+        self.unitcost = unitcost
+
+BMX = Bike("BMX", 40, 150)
+Mountain = Bike("Mountain", 40, 175)
+Cruiser = Bike("Cruiser", 35, 225)
+Road = Bike("Road", 25, 300)
+Hybrid = Bike("Hybrid", 25, 550)
+City = Bike("City", 30, 600)
+
+'''Shop'''
+class Shop(object): #Shops, they take inventory and money from Customers
+    def __init__(self, name, stock, salemargin=1.20, profit, inventory=None):
+        self.name = name
+        self.stock = stock
+        self.salemargin = 1.20
+        self.profit = 0
+        if inventory != None:
+            self.inventory = inventory
+        else:
+            self.inventory = {}
+            
+    def store_inventory(self):
+        print(self.inventory)
+        
+    def bike_filter(self, budget):
+        afford_list = []
+        for bike in self.inventory:
+            if self.unitcost*self.salemargin <= self.budget:
+                afford_list.append(bike)
+        return afford_list
+    
+    def sell_bike(self, name, customer): 
+        for bike_type in self.inventory:
+                if bike_type.name == name:
+                    if self.inventory[bike] > 0:
+                        sale_price = bike.unitcost*self.salemargin  
+                        if sale_price <= customer.budget:
+                                customer.budget -= sale_price
+                                customer.inventory.append(bike)
+                                self.inventory[bike] -= 1
+                        else:
+                            print("Our apologies, you cannot afford this product.")
+    
+BigBikeStore = Shop("Big Bike Store", {BMX : 10, Mountain : 15, Cruiser : 15, Road : 20, Hybrid : 15, City : 10})
+
+'''Customer'''            
+class Customer(object): #Customers, Shops take money from them
+    def __init__(self, name, budget, purchase, inventory=None):
+        self.name = name
+        self.budget = budget
+        self.purchase = purchase
+        if self.inventory != None:
+            self.inventory = inventory
+        else:
+            self.inventory = {}
+        
+    def bike_filter(self, budget):
+        afford_list = []
+        for bike in self.inventory:
+            if self.unitcost*self.salemargin <= self.budget:
+                afford_list.append(bike)
+        return afford_list
+
+Ronald = Customer("Ronald", 200)
+Francis = Customer("Francis", 500)
+Lois = Customer("Lois", 1000)
+
+BigBikeStore.store_inventory()
+print("Here's our selection...")
+
+#Filters affordable bikes based on the unit cost times the 20% sales margin increase for each customer's budget 
+BudgetedBikes = bike_filter(Ronald.budget)
+print(BudgetedBikes)
+BudgetedBikes = bike_filter(Francis.budget)
+print(BudgetedBikes)
+BudgetedBikes = bike_filter(Lois.budget)
+print(BudgetedBikes)
+
+#Sells the bike to each customer
+BigBikeStore.sell_bike(BMX, Ronald)
+print(Ronald.inventory)
+BigBikeStore.sell_bike(Cruiser, Francis)
+print(Francis.inventory)
+BikgBikeStore.sell_bike(Hybrid, Lois)
+print(Lois.inventory)
+
+print(BigBikeStore.store_inventory)
+
+
+###VER3.0###
 #These are the bike classes, they will be separated by weight class 
 class Bike(object):
     def __init__(self, name, weight, unitcost):
