@@ -1,3 +1,5 @@
+'''Extension portion of bicycle project in attempt to integrate into code''' 
+
 class Bike_Parts(object):
     def __init__(self, name, weight, unitcost):
         self.name = name
